@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1><font color="green">Lista  produktów:</font></h1>
+<br>
+
+<table align="center">
+  <thead>
+    <tr>
+      <th>     </th>
+     
+      <th>Nazwa</th>
+      <th>Cena PLN</th>
+        
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+      <td ><%= image_tag(product.image_url, width: '61px') %></td
+        <td><%=  %></td>
+         
+        <td><%= product.title %></td> 
+        <td><%= product.price %></td>
+        
+         
+        
+        <td><%= link_to 'Pokaż', product %></td>
+       
+        
+       <td> <a href = "/cart/<%= product.id %>">Dodaj do koszyka </a></td>        
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<% if admin_signed_in? %>
+  <a href="/products/new"><button > Nowy produkt</button></a>
+<% end %>
+
+ <a href="/products/new"><button > Nowy produkt</button></a>

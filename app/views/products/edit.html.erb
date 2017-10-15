@@ -1,0 +1,12 @@
+<h1>Edycja Produktu:</h1>
+<br>
+<%= render 'form' %>
+<% if admin_signed_in? %>
+    
+     <%= link_to "Kasuj", @product, method: :delete, data: { confirm: 'Czy jesteś pewien?' } %>
+     <% end %>
+
+ 
+<%= link_to 'Show', @product %>
+<%= link_to 'Back', products_path %> 
+

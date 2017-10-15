@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cartapp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+     
+   
+ <navi id="navi">
+   <div id="page_navi">
+<%= image_tag("myszunia.png", width: '61px') %>
+     <font color="navy" size="5" face="Arial"> Sklep "Myszka"</font>
+     
+     <br>
+     <%= link_to "Home", new_user_session_path %>
+     <%= link_to "Produkty", products_path %> 
+     <%= link_to "O sklepie", page_about_path %>
+     <%= link_to "Dostawa", page_faqs_path %>
+     <%= link_to "Kontakt", page_contact_path %>
+
+   </div>
+ <div id="sign_in">
+<% if user_signed_in? %>
+        <%= link_to "Wyloguj", destroy_user_session_path, method: :delete %>
+     <% else %>
+	<%= link_to "Zaloguj", new_user_session_path  %>
+
+
+	<%= link_to "Zarejestruj", new_user_registration_path  %> 
+     <% end %>
+ </div>
+  </navi>
+
+<div id="main_wrap">
+ 	<p class="notice"><%= notice %></p>
+ 	<p class="alert"><%= alert %></p>
+
+<div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+    <%= yield %>
+    </div>
+    </div>
+   </div>
+</div>
+
+</body>
+</html>

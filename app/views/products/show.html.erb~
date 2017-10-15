@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+<h1>Specyfikacja produktu:<h1>
+<p>
+ <br>
+  <strong>Nazwa produktu:</strong>
+  <%= @product.title %>
+</p>
+
+<p>
+  <strong>Opis:</strong>
+  <%= @product.description %>
+</p>
+
+<p>
+  <strong>Cena PLN:</strong>
+  <%= @product.price %>
+</p>
+
+<p>
+  <strong>Kategoria:</strong>
+  <%= @product.category %>
+</p>
+
+<p>
+  <strong>Podkategoria:</strong>
+  <%= @product.subcategory %>
+</p>
+
+<p>
+  <strong>Obrazek:</strong>
+  <%= @product.image_url %>
+<br>
+ <%= image_tag(@product.image_url, width: '61px') %>
+</p>
+<font size="3"><%= link_to 'Edycja produktu  ', edit_product_path(@product) %></font> 
+<font size="3">  | <font>
+<font size="3"><%= link_to 'Cofnij', products_path %></font>
